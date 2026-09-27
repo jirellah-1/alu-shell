@@ -1,0 +1,4 @@
+#!/bin/bash
+W=$(echo "$WATER" | tr water 01234)
+S=$(echo "$STIR" | tr stir. 01234)
+printf "%o\n" $(( $(echo "ibase=5; $W" | bc) + $(echo "ibase=5; $S" | bc) )) | tr 01234567 bestchol
