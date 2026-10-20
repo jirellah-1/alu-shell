@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Display a message every two seconds indefinitely.
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done

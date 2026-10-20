@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Display PIDs and names of processes containing bash in their names.
+for proc in /proc/[0-9]*; do
+    if [ -r "$proc/comm" ]; then
+        read -r name < "$proc/comm"
+        case "$name" in
+            *bash*) printf '%s %s\n' "${proc##*/}" "$name" ;;
+        esac
+    fi
+done

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Stop the process running the infinity script using kill.
+pid=$(pgrep -f '[4]-to_infinity_and_beyond' | head -n 1)
+
+if [ -n "$pid" ]; then
+    kill "$pid"
+fi
